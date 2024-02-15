@@ -1,8 +1,5 @@
 flask
 flask_sqlalchemy
 flask-migrate
-flask-wtf
-flask-login
 pymysql
 cryptography
-email_validator
