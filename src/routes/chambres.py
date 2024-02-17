@@ -46,14 +46,17 @@ def update_chambre(id):
     if not chambre:
         return {"success": False, "message": "Chambre non trouvée."}    
 
+    if not data or "numero" not in data and "type" not in data and "prix" not in data:
+        return {"success": False, "message": "Veuillez fournir des informations à mettre à jour."}
+    
     # Permet de mettre à jour seulement les informations qui sont fournies
-    if data and "numero" in data:
+    if "numero" in data:
         chambre.numero = data['numero']
 
-    if data and "type" in data:
+    if "type" in data:
         chambre.type = data['type']
 
-    if data and "prix" in data:
+    if "prix" in data:
         chambre.prix = data['prix']
 
     db.session.commit()
