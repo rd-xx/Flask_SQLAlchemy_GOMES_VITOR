@@ -17,4 +17,10 @@ def create_app():
     from .routes.chambres import chambres
     app.register_blueprint(chambres)
 
+    from .routes.reservations import reservations
+    app.register_blueprint(reservations)
+
+    from .routes.clients import clients
+    app.register_blueprint(clients)
+
     return app
